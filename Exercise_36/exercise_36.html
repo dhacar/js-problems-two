@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 36</title>
+    <style>
+        #colorPreview {
+            width: 200px;
+            height: 200px;
+            margin: 20px 0;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #colorHistory {
+            list-style: none;
+            padding: 0;
+        }
+        #colorHistory li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive Color Picker</h1>
+    <label for="colorPicker">Choose a color:</label>
+    <input type="color" id="colorPicker">
+    <div id="colorPreview">Color Preview</div>
+    <h2>Color History</h2>
+    <ul id="colorHistory"></ul>
+    <button id="clearHistoryButton">Clear History</button>
+    <script>
+        const colorPicker = document.querySelector("#colorPicker");
+        const colorPreview = document.querySelector("#colorPreview");
+        const colorHistory = document.querySelector("#colorHistory");
+        const clearHistoryButton = document.querySelector("#clearHistoryButton");
+
+        colorPicker.addEventListener("input", () => {
+            const color = colorPicker.value;
+            colorPreview.style.backgroundColor = color;
+            const historyItem = document.createElement("li");
+            historyItem.textContent = color;
+            historyItem.style.color = color;
+            colorHistory.appendChild(historyItem);
+        });
+
+        clearHistoryButton.addEventListener("click", () => {
+            colorHistory.innerHTML = "";
+        });
+    </script>
+</body>
+</html>
