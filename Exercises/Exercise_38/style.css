@@ -1,0 +1,159 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+
+
+/* qaybta sections ka */
+.page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: white;
+}
+#home {
+    background-color: #4CAF50; }
+
+#about {
+    background-color: #2196F3; 
+}
+
+#service {
+    background-color: #FF9800; 
+}
+
+#contact {
+    background-color: #9C27B0; 
+}
+
+
+
+
+
+
+
+.navbar {
+    display: flex;
+    background-color: #333;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+}
+
+.brand-title {
+    font-size: 1.5em;
+    line-height: 60px;
+
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+.navbar-links li {
+    padding: 0 10px;
+}
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    line-height: 60px;
+    display: block;
+
+
+}
+
+.navbar-links a:hover{
+    background-color: #444;
+}
+.toggle-button{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+@media (max-width: 768px) {
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+    .toggle-button{
+        display: flex;
+    }
+
+    .navbar-links{
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+
+    }
+.navbar-links ul {
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.navbar-links li {
+    text-align: center;
+
+}
+
+.navbar-links a {
+    padding: 20px;
+    line-height: 20px;
+
+
+}
+.navbar.active .navbar-links{
+    max-height: 300px;
+    opacity: 1;
+
+}
+
+.navbar.active .toggle-button .bar:nth-child(2){
+    opacity: 0;
+    
+}
+.navbar.active .toggle-button .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+}
+.navbar.active .toggle-button .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+}
